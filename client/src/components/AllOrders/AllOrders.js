@@ -20,9 +20,6 @@ export default function AllOrders() {
   const classes = useStyles();
   const { values, error, loading } = useSelector((state) => state.orders);
 
-  // const state =  useSelector((state) => state)
-
-  console.log("222222=>>>>>", values);
 
   useEffect(() => {
     dispatch(getOrders());
@@ -38,7 +35,7 @@ export default function AllOrders() {
     }
   }, [values]);
 
-  console.log("111111=>", arr);
+
   //============== SEARCH
 
   function translit(word) {

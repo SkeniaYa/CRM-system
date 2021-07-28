@@ -28,7 +28,6 @@ router.post("/new/:id", async (req, res) => {
     client,
   } = req.body;
   const userId = req.session.passport.user._id;
-  // console.log("1==>", req.body);
   try {
     if (number) {
       const newOrder = await Order.create({
@@ -83,15 +82,12 @@ router.post("/new/:id", async (req, res) => {
   }
 });
 
-//========= /orders
-
 router.get("/all", async (req, res) => {
   try {
     const allOrders = await Order.find()
       .populate("creator")
       .populate("client")
       .sort({ _id: -1 });
-    // console.log("allOrders---->", allOrders);
     res.json(allOrders);
   } catch (err) {
     res.sendStatus(400);
@@ -109,15 +105,6 @@ router.get("/:id", async (req, res) => {
     return res.sendStatus(400);
   }
 });
-// router.delete("/:id", async (req, res) => {
-//   const { id } = req.params;
-//   try {
-//     await Order.findByIdAndDelete(id);
-//     res.sendStatus(200);
-//   } catch (error) {
-//     return res.sendStatus(400);
-//   }
-// });
 
 router.patch("/:id", async (req, res) => {
   const { id } = req.params;
@@ -136,7 +123,6 @@ router.patch("/:id", async (req, res) => {
 router.post("/:id", async (req, res) => {
   const { id } = req.params;
   const { comment, userName } = req.body;
-  // console.log("333333=>>>", comment);
   let dat = new Date();
   let options = {
     year: "numeric",
@@ -157,7 +143,6 @@ router.post("/:id", async (req, res) => {
       { $push: { comments: newComment._id } },
       { new: true }
     ).populate("comments");
-    // console.log("updOrder=======>", updOrder);
     res.json({ newComment, updOrder });
   } catch (error) {
     console.log(error);
@@ -172,14 +157,11 @@ router.delete("/:id/comments", async (req, res) => {
     { new: true }
   ).populate("comments");
   await Comment.findByIdAndDelete(commentId);
-  // console.log('====>currentOrder===>', currentOrder);
   res.json(currentOrder);
-  // console.log("commentId--->", commentId);
 });
 
 router.patch("/edit/:id", async (req, res) => {
   const { id } = req.params;
-  // console.log("11111=>>>>>", id, req.body.order);
   try {
     const updOrder = await Order.findByIdAndUpdate(id, req.body.order, {
       new: true,

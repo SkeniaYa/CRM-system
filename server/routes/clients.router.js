@@ -27,9 +27,6 @@ router.post("/new", async (req, res) => {
         address,
         creator: id,
       });
-      // const newClient = await Client.findById(tmpClient._id).populate(
-      //   "creator"
-      // );
 
       res.json(newClient);
     }
@@ -76,7 +73,7 @@ router.patch("/staradd", async (req, res) => {
 
 router.patch("/:id", async (req, res) => {
   const { id } = req.params;
-  // const { name, surname, patronymic, email, phone, address } = req.body;
+
   if (req.body.name) {
     const data = await Client.findByIdAndUpdate(
       id,
@@ -95,13 +92,11 @@ router.patch("/:id", async (req, res) => {
 
 router.get("/client/:id", async (req, res) => {
   const { id } = req.params;
-  console.log('ID',id);
+  console.log("ID", id);
   try {
     const client = await Client.findById(id)
       .populate("comments")
       .populate("orders");
-    // console.log(client);
-    // console.log("QQQQQQ=>>>", client);
 
     res.json(client);
   } catch (err) {

@@ -44,15 +44,6 @@ passport.use(
           done(null, user);
         }
       );
-
-      // console.log("user===>", user);
-
-      // const user = await User.findOrCreate(profile._json, (err, user) => {
-      //   if (err) {
-      //     return done(err);
-      //   }
-      //   done(null, user);
-      // });
     }
   )
 );
@@ -82,26 +73,7 @@ router.get("/google/failure", (req, res) => {
   res.send('Go to admin=/');
 });
 
-// router.get("/user", (req, res) => {
-//   if (user) {
-//     req.session.user = {
-//       id: user._id,
-//       name: user.name,
-//     };
-//     console.log("KKKKKKK+++++=====>>>", req.session.user);
-//     // return res.json(defaultUser);  !!!!!!!!!!!!
-//     return res.json(user);
-//   }
-//   return res.json(null);
-// });
-
 router.get("/user", (req, res) => {
-  // return res.json(defaultUser);  !!!!!!!!!!!!
-  // req.session.user = {
-  //   id: user?._id,
-  //   name: user.name,
-  // };
-  // console.log('!!!!!=))))=>>>', user);
   return res.json(user);
 });
 
@@ -111,7 +83,6 @@ router.route("/check").get(checkAuth, async (req, res) => {
       { googleId: req.session.passport.user.googleId },
       { password: 0 }
     );
-    // console.log("!!!!", user);
     return res.json(user);
   } catch (error) {
     return res.sendStatus(500);

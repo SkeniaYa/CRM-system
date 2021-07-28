@@ -1,0 +1,43 @@
+.orderInfo {
+  background-color: white;
+  padding: 30px;
+  margin-top: 50px;
+}
+.orderInfoSmall {
+  padding: 20px;
+  border: 1px solid black;
+}
+.commentsOrderList {
+  margin-top: 10px;
+}
+.commentsOrderList li {
+  list-style-type: none;
+  margin-bottom: 15px;
+  /* border-bottom: 1px solid #bdbdbd; */
+}
+.commentsOrderItem {
+  display: flex;
+}
+.commentsOrderItemRight {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+.ordersCommentsBottom {
+  margin-top: 20px;
+}
+.orderTitle {
+  display: flex;
+  justify-content: space-between;
+}
+.commentsOrderItemLeft {
+  width: 75%;
+  border-bottom: 1px solid #bdbdbd;
+}
+.commentOrderInput {
+  padding: 10px;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  /* box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06); */
+  outline: none;
+}

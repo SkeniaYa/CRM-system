@@ -12,7 +12,7 @@ const options = {
 
 const { DB_HOST, DB_NAME, DB_PORT } = process.env;
 
-const dbConnectionURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+const dbConnectionURL = `mongodb+srv://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 
 function connect() {
   mongoose.connect(dbConnectionURL, options, (err) => {

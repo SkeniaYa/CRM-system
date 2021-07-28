@@ -1,0 +1,32 @@
+.allOrders {
+  margin-top: 30px;
+}
+.allOrders form {
+  margin-bottom: 15px;
+}
+.orderItem {
+  color: white;
+}
+
+.ordersList {
+  list-style: none;
+  padding-left: 0;
+}
+#hed {
+  float: left;
+  width: 23.5%;
+  margin-right: 2%;
+  padding: 10px;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.search_input {
+}
+
+.headerOrders {
+  margin-bottom: 40px;
+  padding-left: 32px;
+}

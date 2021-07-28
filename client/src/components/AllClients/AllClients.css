@@ -1,0 +1,133 @@
+.clientsList {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  padding-left: 0;
+  /* margin: 0 -10px; */
+  justify-content: left;
+  margin-top: 20px;
+  width: calc(100%+24px);
+  margin: 0 -12px;
+  /* margin: 0 -15px; */
+}
+.clientsList li {
+  width: calc(100% / 12 * 3 - 24px);
+  /* margin: 15px 0; */
+  background-color: #dbdbdb;
+  /* border-radius: 10px; */
+  box-shadow: 5px 5px 15px 3px black;
+  padding-bottom: 15px;
+  margin: 12px;
+}
+.clientsList li:hover {
+  /* opacity: 0.6; */
+  box-shadow: 5px 5px 15px 3px whitesmoke;
+}
+
+.clientsItem {
+  padding: 0 15px;
+  /* border: 1px solid black; */
+  /* text-decoration: none; */
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+.image {
+  background-color: #dbdbdb;
+
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.clientsInfo {
+  color: black;
+}
+.search_input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 40%;
+  border: 1px solid #bababa;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  height: 40px;
+}
+.search_input:focus {
+  border: 2px solid #333333;
+}
+.allClients {
+  margin-top: 30px;
+}
+h1 {
+  color: white;
+}
+
+.title-client {
+  margin-top: 20px;
+}
+
+.allClients {
+  margin-left: auto;
+  background-image: url("./img/maxresdefault.jpeg");
+  margin: 0;
+  font-family: "Gilroy" serif;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+  min-height: 1000px;
+}
+
+.allClients::before {
+  background: linear-gradient(
+    to top,
+    rgba(11, 29, 38) 0%,
+    rgba(248, 248, 248, 0) 100%
+  );
+  content: "";
+  display: block;
+  height: 86.5%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.search_form {
+  position: relative;
+}
+
+.descr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  color: whitesmoke;
+  padding-top: 80px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  pointer-events: none;
+
+}
+
+.clientsList li:hover .descr{
+  display: block;
+  opacity: 1;
+  top: 100;
+}

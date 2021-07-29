@@ -15,4 +15,4 @@
 В личном кабинете администратора существует возможность подтвердить или отменить удаление карточки заказа/ клиента, а также назначить администратором другого сотрудника.
 Также telegram бот присылает в чат сотрудников приветствие при регистрации нового сотрудника и информацию о новом заказе при его создании.
 
-В проете использовались технологии: MongoDB Atlas, Node.js, Express, React JS, Redux + Thunk, PassportJS, Nodemailer, React Hook Form, dadata, api telegram. 
+В проете использовались технологии: MongoDB Atlas, Node.js, Express, React, Redux + Thunk, PassportJS, Nodemailer, React Hook Form, dadata, api telegram. 
